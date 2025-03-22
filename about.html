@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Research Poster Competition 2025</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <svg viewBox="0 0 50 50">
+                <circle cx="25" cy="25" r="20"></circle>
+            </svg>
+        </div>
+        <div class="loader-text">Loading <span class="dots"></span></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Particles Effect -->
+    <div class="particle-container" id="particles"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">Research <span class="logo-highlight">Poster</span> Competition</span>
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
+                <li class="nav-item"><a href="dates.html" class="nav-link">Key Dates</a></li>
+                <li class="nav-item"><a href="guidelines.html" class="nav-link">Guidelines</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <!-- <li class="nav-item"><a href="register.html" class="highlight btn-shimmer">Register Now</a></li> -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-aos="fade-up">About the Competition</h1>
+            <p data-aos="fade-up" data-aos-delay="100" style="color: gold;"><b>Learn more about our prestigious research poster competition, our mission, and what makes it special.</b></p>
+        </div>
+    </section>
+
+    <!-- About Overview Section -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-right">
+                    <div class="section-header text-left">
+                        <h2 class="section-title">Fostering Innovation Through Visual Research</h2>
+                    </div>
+                    <p><b>The Research Poster Competition at Techno International New Town (TINT) was established in 2018 with the vision to provide a platform for researchers to showcase their work in a visually compelling format.</b></p>
+                    <p><b>Now in its 7th year, our competition has grown to become one of the most prestigious research events in the region, attracting participants from across India and neighboring countries.</b></p>
+                    <p><b>We believe that effective visual communication of research is just as important as the research itself. Our competition encourages researchers to present complex findings in accessible, engaging formats that can reach both expert and non-expert audiences.</b></p>
+                </div>
+                <br>
+                <center>
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="about-image" >
+                        <img src="pstr.jpg" alt="Participants at the Research Poster Competition" class="img-fluid hover-card">
+                        <div class="image-overlay">
+                            <br>
+                            <div class="badge-container">
+                                <span class="badge badge-primary">Since 2018</span>
+                                <span class="badge badge-secondary">2500+ Participants</span>
+                            </div>
+                        </div>
+                    </div>
+                </center>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Categories Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <!-- <span class="section-subtitle">Research Areas</span> -->
+                <h2 class="section-title">Categories for Submission</h2>
+                <p class="section-description" style="color: blue;font-weight: bolder;">Our competition welcomes research posters across 12 diverse fields, encouraging interdisciplinary approaches.</p>
+            </div>
+
+            <div class="categories-grid">
+                <div class="category-card glass-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="category-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Artificial Intelligence</h3>
+                    <p>Machine learning, deep learning, neural networks, AI applications</p>
+                </div>
+
+                <div class="category-card glass-card" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="category-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainable Technologies</h3>
+                    <p>Green tech, sustainable development, environmental solutions</p>
+                </div>
+
+                <div class="category-card glass-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="category-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Biomedical Engineering</h3>
+                    <p>Medical devices, diagnostic tools, healthcare innovations</p>
+                </div>
+
+                <div class="category-card glass-card" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="category-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Robotics & Automation</h3>
+                    <p>Industrial automation, collaborative robots, autonomous systems</p>
+                </div>
+
+                <div class="category-card glass-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="category-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>IoT & Smart Systems</h3>
+                    <p>Connected devices, smart homes, industrial IoT applications</p>
+                </div>
+
+                <div class="category-card glass-card" data-aos="zoom-in" data-aos-delay="350">
+                    <div class="category-icon">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <h3>Renewable Energy</h3>
+                    <p>Solar, wind, hydro and alternative energy sources research</p>
+                </div>
+
+                <div class="category-card glass-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="category-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Computer Science</h3>
+                    <p>Algorithms, software engineering, cybersecurity, cloud computing</p>
+                </div>
+
+                <div class="category-card glass-card" data-aos="zoom-in" data-aos-delay="450">
+                    <div class="category-icon">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h3>Biotechnology</h3>
+                    <p>Genetic engineering, bioinformatics, pharmaceutical innovations</p>
+                </div>
+
+                <div class="category-card glass-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="category-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Civil Engineering</h3>
+                    <p>Sustainable structures, infrastructure development, urban planning</p>
+                </div>
+
+                <div class="category-card glass-card" data-aos="zoom-in" data-aos-delay="550">
+                    <div class="category-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Material Science</h3>
+                    <p>Advanced materials, nanotechnology, composites research</p>
+                </div>
+
+                <div class="category-card glass-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="category-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Manufacturing</h3>
+                    <p>Advanced manufacturing, 3D printing, industry 4.0 technologies</p>
+                </div>
+
+                <div class="category-card glass-card" data-aos="zoom-in" data-aos-delay="650">
+                    <div class="category-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Chemical Engineering</h3>
+                    <p>Process engineering, chemical synthesis, sustainable chemistry</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Committee Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle"></span>
+                <h2 class="section-title">Meet Our Team Organizing Committee</h2>
+                <p class="section-description" style="color: blue;font-weight: bolder;">Our dedicated committee members work tirelessly to make the Research Poster Competition a resounding success.</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member hover-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="member-image">
+                        <img src="images/team-1.jpg" alt="Dr. Rajesh Kumar">
+                        <div class="social-links-overlay">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="far fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Dr. Rajesh Kumar</h3>
+                        <span class="member-position">Committee Chair</span>
+                        <p>Professor of Computer Science with 15+ years of experience in research and academia.</p>
+                    </div>
+                </div>
+
+                <div class="team-member hover-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="member-image">
+                        <img src="images/team-2.jpg" alt="Dr. Priya Sharma">
+                        <div class="social-links-overlay">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="far fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Dr. Priya Sharma</h3>
+                        <span class="member-position">Technical Coordinator</span>
+                        <p>Associate Professor of Electrical Engineering specializing in renewable energy systems.</p>
+                    </div>
+                </div>
+
+                <div class="team-member hover-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="member-image">
+                        <img src="images/team-3.jpg" alt="Prof. Amit Verma">
+                        <div class="social-links-overlay">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="far fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Prof. Amit Verma</h3>
+                        <span class="member-position">Judging Panel Lead</span>
+                        <p>Professor of Biotechnology with extensive industry collaboration experience.</p>
+                    </div>
+                </div>
+
+                <div class="team-member hover-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="member-image">
+                        <img src="images/team-4.jpg" alt="Dr. Anjali Gupta">
+                        <div class="social-links-overlay">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="far fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Dr. Anjali Gupta</h3>
+                        <span class="member-position">Student Coordinator</span>
+                        <p>Assistant Professor of Mechanical Engineering and mentor for student research projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <!-- <section class="section bg-gradient">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">By The Numbers</span>
+                <h2 class="section-title">Our Impact</h2>
+                <p class="section-description">The Research Poster Competition has grown significantly since its inception, making a substantial impact on the research community.</p>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number" data-count="2500">0</div>
+                    <div class="stat-label">Participants</div>
+                </div>
+
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="stat-number" data-count="1200">0</div>
+                    <div class="stat-label">Research Posters</div>
+                </div>
+
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="stat-number" data-count="150">0</div>
+                    <div class="stat-label">Award Winners</div>
+                </div>
+
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="stat-icon">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <div class="stat-number" data-count="75">0</div>
+                    <div class="stat-label">Participating Institutions</div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Testimonials Section -->
+    <!-- <section class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up"> -->
+                <!-- <span class="section-subtitle">Success Stories</span> -->
+                <!-- <h2 class="section-title">What Past Participants Say</h2>
+                <p class="section-description" style="color: blue; font-weight: bolder;">Hear from previous participants about their experience at the Research Poster Competition.</p>
+            </div>
+
+            <div class="testimonials-slider" data-aos="fade-up">
+                <div class="testimonial-item">
+                    <div class="testimonial-content glass-card">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>Participating in the Research Poster Competition was a turning point in my academic career. The feedback I received from the judges helped me refine my research methodology, and the networking opportunities led to a collaborative project with researchers from another university.</p>
+                        <div class="testimonial-author">
+                            <img src="images/testimonial-1.jpg" alt="Rahul Mehta">
+                            <div>
+                                <h4>Rahul Mehta</h4>
+                                <span>PhD Candidate, IIT Bombay</span>
+                                <div class="star-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-content glass-card">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>As a first-time participant, I was amazed by the professionalism and organization of the event. The competition gave me a platform to showcase my work on sustainable energy solutions, which later got me recognition in my field and funding opportunities for further research.</p>
+                        <div class="testimonial-author">
+                            <img src="images/testimonial-2.jpg" alt="Priya Sharma">
+                            <div>
+                                <h4>Priya Sharma</h4>
+                                <span>Research Scientist, CSIR</span>
+                                <div class="star-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-content glass-card">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>The Research Poster Competition pushed me to communicate my complex research in AI ethics in a visually appealing and accessible manner. The skills I gained in visual communication have been invaluable in my current role as a technology consultant where I regularly present to non-technical stakeholders.</p>
+                        <div class="testimonial-author">
+                            <img src="images/testimonial-3.jpg" alt="Arjun Patel">
+                            <div>
+                                <h4>Arjun Patel</h4>
+                                <span>Technology Consultant, Deloitte</span>
+                                <div class="star-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-navigation">
+                <button id="prev-slide" class="slide-arrow"><i class="fas fa-chevron-left"></i></button>
+                <div class="slide-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button id="next-slide" class="slide-arrow"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Sponsors Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <!-- <span class="section-subtitle">Our Supporters</span> -->
+                <h2 class="section-title">Event Sponsors</h2>
+                <p class="section-description" style="color: blue;font-weight: bolder;">We are grateful to our sponsors for their continued support in making this event possible.</p>
+            </div>
+
+            <div class="sponsors-container" data-aos="fade-up">
+                <div class="sponsor-tier">
+                    <h3 class="tier-title">Platinum Sponsors</h3>
+                    <div class="sponsor-logos">
+                        <div class="sponsor-logo hover-card">
+                            <img src="images/sponsor-1.png" alt="TechCorp India">
+                        </div>
+                        <div class="sponsor-logo hover-card">
+                            <img src="images/sponsor-2.png" alt="InnovateTech Solutions">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sponsor-tier">
+                    <h3 class="tier-title">Gold Sponsors</h3>
+                    <div class="sponsor-logos">
+                        <div class="sponsor-logo hover-card">
+                            <img src="images/sponsor-3.png" alt="AI Research Lab">
+                        </div>
+                        <div class="sponsor-logo hover-card">
+                            <img src="images/sponsor-4.png" alt="BioGenetics">
+                        </div>
+                        <div class="sponsor-logo hover-card">
+                            <img src="images/sponsor-5.png" alt="RoboSystems">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sponsor-tier">
+                    <h3 class="tier-title">Silver Sponsors</h3>
+                    <div class="sponsor-logos">
+                        <div class="sponsor-logo hover-card">
+                            <img src="images/sponsor-6.png" alt="EcoSolutions">
+                        </div>
+                        <div class="sponsor-logo hover-card">
+                            <img src="images/sponsor-7.png" alt="DataTech">
+                        </div>
+                        <div class="sponsor-logo hover-card">
+                            <img src="images/sponsor-8.png" alt="Smart Systems">
+                        </div>
+                        <div class="sponsor-logo hover-card">
+                            <img src="images/sponsor-9.png" alt="NextGen Materials">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sponsor-cta" data-aos="fade-up">
+                <h3>Interested in Sponsoring?</h3>
+                <p>Join our esteemed list of sponsors and gain visibility among the brightest minds in research.</p>
+                <a href="contact.html" class="btn btn-primary btn-shimmer">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Ready to Showcase Your Research ?</h2>
+            <p data-aos="fade-up" data-aos-delay="100" style="color: black;"><b>Register now to secure your spot in the Research Poster Competition 2025. Limited spots available with early bird discounts.</b></p>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <a href="register.html" class="btn btn-primary btn-shimmer">Register Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Research Poster Competition</h3>
+                    <p>An annual event bringing together innovative minds to showcase their research through visually compelling posters.</p>
+                    <p>Techno International New Town (TINT)<br>
+                    DG Block, Action Area I, Newtown,<br>
+                    Kolkata - 700156</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="dates.html">Key Dates</a></li>
+                        <li><a href="guidelines.html">Guidelines</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="register.html">Register</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> info@postercompetition.org</p>
+                    <p><i class="fas fa-phone"></i> +91 33 2324 3123</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Research Poster Competition. All Rights Reserved. Designed by TINT Design Team.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Initialize AOS Animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: false,
+            mirror: false
+        });
+        
+        // Preloader
+        $(window).on('load', function() {
+            setTimeout(function() {
+                $('.preloader').addClass('hide');
+            }, 1000);
+        });
+        
+        // Navbar Scroll
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 50) {
+                $('.navbar').addClass('scrolled');
+            } else {
+                $('.navbar').removeClass('scrolled');
+            }
+            
+            // Back to top button
+            if ($(this).scrollTop() > 300) {
+                $('.back-to-top').addClass('active');
+            } else {
+                $('.back-to-top').removeClass('active');
+            }
+        });
+        
+        // Back to top button click
+        $('.back-to-top').click(function(e) {
+            e.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 500);
+            return false;
+        });
+        
+        // Mobile Menu Toggle
+        $('.menu-toggle').click(function() {
+            $('.nav-menu').toggleClass('active');
+            $('.hamburger').toggleClass('active');
+        });
+        
+        // Custom Cursor
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.querySelector('.cursor');
+            const cursorFollower = document.querySelector('.cursor-follower');
+            
+            document.addEventListener('mousemove', function(e) {
+                gsap.to(cursor, {
+                    x: e.clientX,
+                    y: e.clientY,
+                    duration: 0.1,
+                    opacity: 1
+                });
+                
+                gsap.to(cursorFollower, {
+                    x: e.clientX,
+                    y: e.clientY,
+                    duration: 0.3,
+                    opacity: 1
+                });
+            });
+            
+            document.addEventListener('mousedown', function() {
+                cursor.classList.add('active');
+                cursorFollower.classList.add('active');
+            });
+            
+            document.addEventListener('mouseup', function() {
+                cursor.classList.remove('active');
+                cursorFollower.classList.remove('active');
+            });
+            
+            // Add hover effect to links and buttons
+            const hoverElements = document.querySelectorAll('a, button, .btn');
+            hoverElements.forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    cursor.classList.add('active');
+                    cursorFollower.classList.add('active');
+                });
+                
+                element.addEventListener('mouseleave', function() {
+                    cursor.classList.remove('active');
+                    cursorFollower.classList.remove('active');
+                });
+            });
+        });
+        
+        // FAQ Toggle
+        $('.faq-question').click(function() {
+            $(this).parent().toggleClass('active');
+            $(this).parent().find('.faq-answer').slideToggle(300);
+            $(this).find('.faq-toggle i').toggleClass('fa-plus fa-minus');
+        });
+        
+        // Timeline Animation
+        $(window).scroll(function() {
+            const windowHeight = $(window).height();
+            const scrollPosition = $(window).scrollTop();
+            
+            $('.premium-timeline-item').each(function() {
+                const elementPosition = $(this).offset().top;
+                
+                if (scrollPosition > elementPosition - windowHeight + 100) {
+                    $(this).addClass('active');
+                    
+                    // Update progress line
+                    const activeItems = $('.premium-timeline-item.active').length;
+                    const totalItems = $('.premium-timeline-item').length;
+                    const progressPercent = (activeItems / totalItems) * 100;
+                    
+                    $('#timeline-progress').css('height', progressPercent + '%');
+                }
+            });
+        });
+        
+        // Small Countdown Timer
+        function updateSmallCountdown() {
+            const targetDate = new Date('February 28, 2025 23:59:59').getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('small-days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('small-hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('small-minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('small-seconds').innerText = seconds.toString().padStart(2, '0');
+            
+            if (distance < 0) {
+                clearInterval(smallCountdownInterval);
+                document.getElementById('small-countdown').innerHTML = 'Registration Closed';
+            }
+        }
+        
+        updateSmallCountdown();
+        const smallCountdownInterval = setInterval(updateSmallCountdown, 1000);
+        
+        // Particles.js
+        particlesJS('particles', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.1,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 1,
+                        "opacity_min": 0.05,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 2,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.1,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 0.2
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html> 

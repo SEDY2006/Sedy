@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guidelines - Research Poster Competition 2025</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <svg viewBox="0 0 50 50">
+                <circle cx="25" cy="25" r="20"></circle>
+            </svg>
+        </div>
+        <div class="loader-text">Loading <span class="dots"></span></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Particles Effect -->
+    <div class="particle-container" id="particles"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">Research <span class="logo-highlight">Poster</span> Competition</span>
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="dates.html" class="nav-link">Key Dates</a></li>
+                <li class="nav-item"><a href="guidelines.html" class="nav-link active">Guidelines</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <!-- <li class="nav-item"><a href="register.html" class="highlight btn-shimmer">Register Now</a></li> -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-aos="fade-up">Submission Guidelines</h1>
+            <p data-aos="fade-up" data-aos-delay="100" style="color: gold;font-weight: bolder;">Essential information for preparing and submitting your research poster</p>
+        </div>
+    </section>
+
+    <!-- Quick Navigation -->
+    <!-- <section class="section quick-nav-section">
+        <div class="container">
+            <div class="quick-nav-container" data-aos="fade-up">
+                <h3>Quick Navigation</h3>
+                <div class="quick-nav-links">
+                    <a href="#abstract" class="nav-link-item">
+                        <div class="icon"><i class="fas fa-file-alt"></i></div>
+                        <span>Abstract Submission</span>
+                    </a>
+                    <a href="#poster" class="nav-link-item">
+                        <div class="icon"><i class="fas fa-object-group"></i></div>
+                        <span>Poster Design</span>
+                    </a>
+                    <a href="#criteria" class="nav-link-item">
+                        <div class="icon"><i class="fas fa-award"></i></div>
+                        <span>Evaluation Criteria</span>
+                    </a>
+                    <a href="#presentation" class="nav-link-item">
+                        <div class="icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <span>Presentation Day</span>
+                    </a>
+                    <a href="#faq" class="nav-link-item">
+                        <div class="icon"><i class="fas fa-question-circle"></i></div>
+                        <span>FAQs</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Guidelines Overview Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <!-- <span class="section-subtitle">Overview</span> -->
+                <h2 class="section-title">Submission Process</h2>
+                <p class="section-description" style="color: black; font-weight: bolder;">Follow these steps to successfully participate in the Research Poster Competition 2025.</p>
+            </div>
+
+            <div class="process-steps" data-aos="fade-up">
+                <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+                    <span class="logo-highlight" style="font-size: larger; font-weight: bolder;">Step-1</span>
+                    <div class="step-content">
+                        <h3>Registration</h3>
+                        <p>Complete the online registration form and pay the applicable fee to create your participant account.</p>
+                    </div>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+                    <span class="logo-highlight" style="font-size: larger; font-weight: bolder;">Step-2</span>
+                    <div class="step-content">
+                        <h3>Abstract Submission</h3>
+                        <p>Prepare and submit your research abstract (300 words max) by January 30, 2025.</p>
+                    </div>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+                    <span class="logo-highlight" style="font-size: larger; font-weight: bolder;">Step-3</span>
+                    <div class="step-content">
+                        <h3>Abstract Review</h3>
+                        <p>Wait for the review committee's decision. Acceptance notifications will be sent by February 15, 2025.</p>
+                    </div>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="400">
+                    <span class="logo-highlight" style="font-size: larger; font-weight: bolder;">Step-4</span>
+                    <div class="step-content">
+                        <h3>Poster Preparation</h3>
+                        <p>Design your poster according to the guidelines provided upon abstract acceptance.</p>
+                    </div>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="500">
+                    <span class="logo-highlight" style="font-size: larger; font-weight: bolder;">Step-5</span>
+                    <div class="step-content">
+                        <h3>Final Submission</h3>
+                        <p>Submit your completed poster in PDF format by March 1, 2025.</p>
+                    </div>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="600">
+                    <span class="logo-highlight" style="font-size: larger; font-weight: bolder;">Step-6</span>
+                    <div class="step-content">
+                        <h3>Presentation</h3>
+                        <p>Attend the competition on March 15-17, 2025 to present your poster to judges and attendees.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guidelines Features Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <!-- <span class="section-subtitle">Key Requirements</span> -->
+                <h2 class="section-title">Submission Highlights</h2>
+                <p class="section-description" style="color: black; font-weight: bolder;">Make sure your submission meets these essential requirements.</p>
+            </div>
+
+            <div class="features-container">
+                <div class="feature-card glass-card" id="abstract" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Abstract Submission</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Maximum 300 words</li>
+                            <li><i class="fas fa-check-circle"></i> PDF format</li>
+                            <li><i class="fas fa-check-circle"></i> Include research title, authors, and keywords</li>
+                            <li><i class="fas fa-check-circle"></i> Clearly state methodology and key findings</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-card glass-card" id="poster" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-object-group"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Poster Dimensions</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> A0 size (841mm × 1189mm)</li>
+                            <li><i class="fas fa-check-circle"></i> Portrait orientation only</li>
+                            <li><i class="fas fa-check-circle"></i> 300 DPI resolution minimum</li>
+                            <li><i class="fas fa-check-circle"></i> Maximum file size: 25MB</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Design Elements</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Clear, legible fonts (min 24pt for body text)</li>
+                            <li><i class="fas fa-check-circle"></i> High-quality graphics and images</li>
+                            <li><i class="fas fa-check-circle"></i> Logical flow of information</li>
+                            <li><i class="fas fa-check-circle"></i> Include institutional logo if applicable</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-card glass-card" id="criteria" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Evaluation Criteria</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Research quality and methodology (40%)</li>
+                            <li><i class="fas fa-check-circle"></i> Visual presentation and design (25%)</li>
+                            <li><i class="fas fa-check-circle"></i> Clarity of content (20%)</li>
+                            <li><i class="fas fa-check-circle"></i> Presenter's knowledge and responses (15%)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Guidelines Section -->
+    <section class="section guidelines-detailed-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <!-- <span class="section-subtitle">Complete Information</span> -->
+                <h2 class="section-title">Detailed Guidelines</h2>
+                <p class="section-description" style="color: black; font-weight: bolder;">Review the comprehensive guidelines below to ensure your submission meets all requirements.</p>
+            </div>
+
+            <div class="guidelines-container" data-aos="fade-up">
+                <!-- Abstract Guidelines -->
+                <h3 id="abstract-guidelines">Abstract Submission Guidelines</h3>
+                <div class="guidelines-content" data-aos="fade-up">
+                    <p>All participants must submit an abstract of their research before being invited to submit a full poster. Abstracts should provide a concise summary of the research work, highlighting its significance, methodology, findings, and conclusions.</p>
+                    
+                    <div class="guidelines-list">
+                        <h4>Abstract Requirements:</h4>
+                        <ul>
+                            <li>Length: Maximum 300 words (excluding title, authors, and keywords)</li>
+                            <li>Format: PDF file</li>
+                            <li>Structure: Must include research title, author(s) name(s), institutional affiliation(s), introduction, methodology, results, conclusion, and 3-5 keywords</li>
+                            <li>Font: Arial or Times New Roman, 12pt</li>
+                            <li>Spacing: Single-spaced with standard margins</li>
+                            <li>File naming convention: LastName_FirstName_Category_Abstract.pdf</li>
+                        </ul>
+                    </div>
+
+                    <!-- <div class="download-guidelines">
+                        <h4>Abstract Templates:</h4>
+                        <p>Download and use one of our abstract templates to ensure your submission meets the required format:</p>
+                        <div class="download-buttons">
+                            <a href="#" class="btn btn-secondary"><i class="fas fa-download"></i> Word Template</a>
+                            <a href="#" class="btn btn-secondary"><i class="fas fa-download"></i> LaTeX Template</a>
+                        </div>
+                    </div> -->
+                </div>
+                
+                <!-- Poster Guidelines -->
+                <h3 id="poster-guidelines">Poster Design Guidelines</h3>
+                <div class="guidelines-content" data-aos="fade-up">
+                    <p>After abstract acceptance, participants must prepare their research posters according to the following guidelines. The poster should effectively communicate your research in a visually appealing and concise manner.</p>
+                    
+                    <div class="guidelines-list">
+                        <h4>Poster Requirements:</h4>
+                        <ul>
+                            <li>Size: A0 (841mm x 1189mm / 33.1" x 46.8")</li>
+                            <li>Orientation: Portrait only</li>
+                            <li>Resolution: Minimum 300 DPI</li>
+                            <li>File format: PDF</li>
+                            <li>Maximum file size: 25MB</li>
+                            <li>File naming convention: LastName_FirstName_Category_Poster.pdf</li>
+                        </ul>
+                    </div>
+
+                    <div class="guidelines-list">
+                        <h4>Poster Content:</h4>
+                        <ul>
+                            <li>Title: Clear and concise, font size 72pt or larger</li>
+                            <li>Author(s) and affiliation(s): Include all contributors and their institutions</li>
+                            <li>Sections: Include Introduction, Methodology, Results, Discussion, Conclusion, and References</li>
+                            <li>Text: Use hierarchical structure with headings and subheadings</li>
+                            <li>Graphics: High-quality images, charts, and graphs with clear captions</li>
+                            <li>Tables: Keep simple and legible</li>
+                            <li>References: Include key references in a standard format</li>
+                            <li>QR code: Optional - can link to additional materials or contact information</li>
+                        </ul>
+                    </div>
+
+                    <div class="guidelines-list">
+                        <h4>Design Tips:</h4>
+                        <ul>
+                            <li>Use a clear, readable font (minimum 24pt for body text)</li>
+                            <li>Maintain a consistent color scheme (3-4 colors maximum)</li>
+                            <li>Balance text and visuals (aim for 40% text, 60% graphics)</li>
+                            <li>Ensure logical flow of information (typically top to bottom, left to right)</li>
+                            <li>Use white space effectively to avoid a cluttered appearance</li>
+                            <li>Include institutional logo if applicable</li>
+                            <li>Ensure high contrast between text and background for readability</li>
+                        </ul>
+                    </div>
+
+                    <!-- <div class="download-guidelines">
+                        <h4>Poster Templates:</h4>
+                        <p>Download and use one of our poster templates to ensure your submission meets the required format:</p>
+                        <div class="download-buttons">
+                            <a href="#" class="btn btn-secondary"><i class="fas fa-download"></i> PowerPoint Template</a>
+                            <a href="#" class="btn btn-secondary"><i class="fas fa-download"></i> InDesign Template</a>
+                            <a href="#" class="btn btn-secondary"><i class="fas fa-download"></i> LaTeX Template</a>
+                        </div>
+                    </div> -->
+                </div>
+                
+                <!-- Evaluation Criteria -->
+                <h3 id="evaluation-criteria">Evaluation Criteria</h3>
+                <div class="guidelines-content" data-aos="fade-up">
+                    <p>All posters will be evaluated by a panel of judges comprising faculty members, industry experts, and research professionals. The evaluation will be based on the following criteria:</p>
+                    
+                    <div class="criteria-chart">
+                        <div class="criteria-item">
+                            <!-- <div class="criteria-percentage" data-percentage="40">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <path class="circle-bg" d="M18 2.0845
+                                          a 15.9155 15.9155 0 0 1 0 31.831
+                                          a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="circle" stroke-dasharray="40, 100" d="M18 2.0845
+                                          a 15.9155 15.9155 0 0 1 0 31.831
+                                          a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <text x="18" y="20.35" class="percentage">40%</text>
+                                </svg>
+                            </div> -->
+                            <h4>Research Quality</h4>
+                            <ul>
+                                <li>Originality and innovation</li>
+                                <li>Methodological rigor</li>
+                                <li>Significance of findings</li>
+                                <li>Contribution to the field</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="criteria-item">
+                            <!-- <div class="criteria-percentage" data-percentage="25">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <path class="circle-bg" d="M18 2.0845
+                                          a 15.9155 15.9155 0 0 1 0 31.831
+                                          a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="circle" stroke-dasharray="25, 100" d="M18 2.0845
+                                          a 15.9155 15.9155 0 0 1 0 31.831
+                                          a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <text x="18" y="20.35" class="percentage">25%</text>
+                                </svg>
+                            </div> -->
+                            <h4>Visual Presentation</h4>
+                            <ul>
+                                <li>Aesthetic appeal</li>
+                                <li>Layout and organization</li>
+                                <li>Effective use of visuals</li>
+                                <li>Design coherence</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="criteria-item">
+                            <!-- <div class="criteria-percentage" data-percentage="20">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <path class="circle-bg" d="M18 2.0845
+                                          a 15.9155 15.9155 0 0 1 0 31.831
+                                          a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="circle" stroke-dasharray="20, 100" d="M18 2.0845
+                                          a 15.9155 15.9155 0 0 1 0 31.831
+                                          a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <text x="18" y="20.35" class="percentage">20%</text>
+                                </svg>
+                            </div> -->
+                            <h4>Content Clarity</h4>
+                            <ul>
+                                <li>Clear communication of ideas</li>
+                                <li>Logical flow and structure</li>
+                                <li>Conciseness and readability</li>
+                                <li>Grammar and spelling</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="criteria-item">
+                            <!-- <div class="criteria-percentage" data-percentage="15">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <path class="circle-bg" d="M18 2.0845
+                                          a 15.9155 15.9155 0 0 1 0 31.831
+                                          a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="circle" stroke-dasharray="15, 100" d="M18 2.0845
+                                          a 15.9155 15.9155 0 0 1 0 31.831
+                                          a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <text x="18" y="20.35" class="percentage">15%</text>
+                                </svg>
+                            </div> -->
+                            <h4>Presenter's Knowledge</h4>
+                            <ul>
+                                <li>Understanding of the research</li>
+                                <li>Response to questions</li>
+                                <li>Engagement with audience</li>
+                                <li>Professionalism</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="guidelines-note">
+                        <h4>Scoring System:</h4>
+                        <p>Each criterion will be scored on a scale of 1-10, with the weighted percentages applied to calculate the final score. The maximum possible score is 100 points.</p>
+                    </div>
+                </div>
+                
+                <!-- Presentation Day Guidelines -->
+                <h3 id="presentation">Presentation Day Guidelines</h3>
+                <div class="guidelines-content" data-aos="fade-up">
+                    <p>On the day of the competition, participants will present their posters to judges and attendees. Please follow these guidelines to ensure a smooth presentation experience:</p>
+                    
+                    <div class="guidelines-list">
+                        <h4>Presentation Requirements:</h4>
+                        <ul>
+                            <li>Each presenter will be allocated a specific poster board and location</li>
+                            <li>Presenters must arrive at least 30 minutes before their scheduled session</li>
+                            <li>Prepare a 3-5 minute concise explanation of your research</li>
+                            <li>Be prepared to answer questions from judges and attendees</li>
+                            <li>Remain at your poster during the designated presentation times</li>
+                            <li>Professional attire is recommended</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guidelines-list">
+                        <h4>Materials to Bring:</h4>
+                        <ul>
+                            <li>Printed copy of your poster (we'll provide mounting materials)</li>
+                            <li>Business cards or contact information to share with interested parties</li>
+                            <li>Optional: Small handouts summarizing your research (max A4 size)</li>
+                            <li>Optional: QR code linking to supplementary materials or publications</li>
+                        </ul>
+                    </div>
+                    <div class="guidelines-note" style="background-color: rgb(212, 130, 114);">
+                        <h4>Note:</h4>
+                        <p>Digital displays, projectors, or other electronic equipment are not permitted unless specifically approved in advance. If your research requires demonstration capabilities, please contact the organizing committee at least two weeks before the event.</p>
+                    </div>
+                </div>
+                
+                <!-- Publication and IP Guidelines -->
+                <h3 id="publication">Publication and Intellectual Property</h3>
+                <div class="guidelines-content" data-aos="fade-up">
+                    <p>By participating in the Research Poster Competition, you agree to the following terms regarding publication and intellectual property:</p>
+                    
+                    <div class="guidelines-list">
+                        <ul>
+                            <li>Abstracts and posters of award-winning entries may be published in the official conference proceedings</li>
+                            <li>Selected high-quality submissions may be invited for publication in associated journals</li>
+                            <li>You retain copyright of your work, but grant the organizers a non-exclusive license to display and publish your abstract and poster for promotional purposes</li>
+                            <li>If your research is proprietary or contains confidential information, please ensure you have necessary permissions before submission</li>
+                            <li>If your research is pending patent application, consult with your intellectual property office before submission</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Research Categories -->
+                <h3 id="categories">Research Categories</h3>
+                <div class="guidelines-content" data-aos="fade-up">
+                    <p>Submissions are accepted in the following research categories. Please select the most appropriate category for your research when submitting your abstract:</p>
+                    
+                    <div class="categories-grid">
+                        <div class="category-pill">Artificial Intelligence</div>
+                        <div class="category-pill">Sustainable Technologies</div>
+                        <div class="category-pill">Biomedical Engineering</div>
+                        <div class="category-pill">Robotics & Automation</div>
+                        <div class="category-pill">IoT & Smart Systems</div>
+                        <div class="category-pill">Renewable Energy</div>
+                        <div class="category-pill">Computer Science</div>
+                        <div class="category-pill">Biotechnology</div>
+                        <div class="category-pill">Civil Engineering</div>
+                        <div class="category-pill">Material Science</div>
+                        <div class="category-pill">Manufacturing</div>
+                        <div class="category-pill">Chemical Engineering</div>
+                    </div>
+                    
+                    <div class="guidelines-note" style="background-color: rgb(212, 130, 114);">
+                        <h4>Note:</h4>
+                        <p>If your research spans multiple categories or doesn't fit neatly into any of the above, please select the closest match and note any additional categories in your abstract submission.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <!-- <section class="section bg-light" id="faq">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Common Questions</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-description">Find answers to common questions about the submission process.</p>
+            </div>
+
+            <div class="faq-container" data-aos="fade-up">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I submit more than one poster?</h3>
+                        <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, participants may submit up to two posters in different research categories. Each submission requires a separate registration and fee.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is there a template I must use for my poster?</h3>
+                        <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>While we provide templates as a guide, their use is not mandatory. However, all posters must adhere to the specified dimensions, orientation, and content requirements.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I present my poster virtually?</h3>
+                        <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The competition is designed as an in-person event. Virtual presentations are only permitted in exceptional circumstances and must be approved at least 30 days in advance. Virtual participants are not eligible for all award categories.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How many authors can be listed on a poster?</h3>
+                        <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>There is no limit to the number of authors that can be listed on a poster. However, the presenting author must be registered for the competition and at least one author must be present during the poster session.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What if I need to make changes after submitting my abstract?</h3>
+                        <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Minor revisions to abstracts are permitted until the submission deadline. After the deadline, contact the organizing committee with your request; changes will be considered on a case-by-case basis.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Will I receive feedback on my submission?</h3>
+                        <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, all participants will receive brief feedback on their abstracts. Accepted poster presenters will also receive feedback from judges after the competition.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-contact" data-aos="fade-up">
+                <p>Don't see your question? Contact us at <a href="mailto:guidelines@postercompetition.org">guidelines@postercompetition.org</a></p>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Guidelines Resources Section -->
+    <!-- <section class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Additional Support</span>
+                <h2 class="section-title">Helpful Resources</h2>
+                <p class="section-description">Utilize these resources to create an outstanding research poster.</p>
+            </div>
+
+            <div class="resources-grid" data-aos="fade-up">
+                <div class="resource-card glass-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Tutorial Videos</h3>
+                        <p>Watch our step-by-step tutorials on creating effective research posters.</p>
+                        <a href="#" class="btn btn-sm btn-secondary">View Videos</a>
+                    </div>
+                </div>
+
+                <div class="resource-card glass-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-download"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Templates & Examples</h3>
+                        <p>Download poster templates and view examples of award-winning posters from previous years.</p>
+                        <a href="#" class="btn btn-sm btn-secondary">Download Resources</a>
+                    </div>
+                </div>
+
+                <div class="resource-card glass-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Webinars</h3>
+                        <p>Register for upcoming webinars on poster design and effective presentation techniques.</p>
+                        <a href="#" class="btn btn-sm btn-secondary">View Schedule</a>
+                    </div>
+                </div>
+
+                <div class="resource-card glass-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Design Tools</h3>
+                        <p>Access discounted or free design tools and software for creating your poster.</p>
+                        <a href="#" class="btn btn-sm btn-secondary">Explore Tools</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Ready to Submit Your Research?</h2>
+            <p data-aos="fade-up" data-aos-delay="100" style="color: black; font-weight: bolder;">Register now to participate in the Research Poster Competition 2025. Early bird registrations closing soon!</p>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <a href="register.html" class="btn btn-primary btn-shimmer">Register Now</a>
+                <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Research Poster Competition</h3>
+                    <p>An annual event bringing together innovative minds to showcase their research through visually compelling posters.</p>
+                    <p>Techno International New Town (TINT)<br>
+                    DG Block, Action Area I, Newtown,<br>
+                    Kolkata - 700156</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="dates.html">Key Dates</a></li>
+                        <li><a href="guidelines.html">Guidelines</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="register.html">Register</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> info@postercompetition.org</p>
+                    <p><i class="fas fa-phone"></i> +91 33 2324 3123</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Research Poster Competition. All Rights Reserved. Designed by TINT Design Team.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+ <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Initialize AOS Animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: false,
+            mirror: false
+        });
+        
+        // Preloader
+        $(window).on('load', function() {
+            setTimeout(function() {
+                $('.preloader').addClass('hide');
+            }, 1000);
+        });
+        
+        // Navbar Scroll
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 50) {
+                $('.navbar').addClass('scrolled');
+            } else {
+                $('.navbar').removeClass('scrolled');
+            }
+            
+            // Back to top button
+            if ($(this).scrollTop() > 300) {
+                $('.back-to-top').addClass('active');
+            } else {
+                $('.back-to-top').removeClass('active');
+            }
+        });
+        
+        // Back to top button click
+        $('.back-to-top').click(function(e) {
+            e.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 500);
+            return false;
+        });
+        
+        // Mobile Menu Toggle
+        $('.menu-toggle').click(function() {
+            $('.nav-menu').toggleClass('active');
+            $('.hamburger').toggleClass('active');
+        });
+        
+        // Custom Cursor
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.querySelector('.cursor');
+            const cursorFollower = document.querySelector('.cursor-follower');
+            
+            document.addEventListener('mousemove', function(e) {
+                gsap.to(cursor, {
+                    x: e.clientX,
+                    y: e.clientY,
+                    duration: 0.1,
+                    opacity: 1
+                });
+                
+                gsap.to(cursorFollower, {
+                    x: e.clientX,
+                    y: e.clientY,
+                    duration: 0.3,
+                    opacity: 1
+                });
+            });
+            
+            document.addEventListener('mousedown', function() {
+                cursor.classList.add('active');
+                cursorFollower.classList.add('active');
+            });
+            
+            document.addEventListener('mouseup', function() {
+                cursor.classList.remove('active');
+                cursorFollower.classList.remove('active');
+            });
+            
+            // Add hover effect to links and buttons
+            const hoverElements = document.querySelectorAll('a, button, .btn');
+            hoverElements.forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    cursor.classList.add('active');
+                    cursorFollower.classList.add('active');
+                });
+                
+                element.addEventListener('mouseleave', function() {
+                    cursor.classList.remove('active');
+                    cursorFollower.classList.remove('active');
+                });
+            });
+        });
+        
+        // FAQ Toggle
+        $('.faq-question').click(function() {
+            $(this).parent().toggleClass('active');
+            $(this).parent().find('.faq-answer').slideToggle(300);
+            $(this).find('.faq-toggle i').toggleClass('fa-plus fa-minus');
+        });
+        
+        // Timeline Animation
+        $(window).scroll(function() {
+            const windowHeight = $(window).height();
+            const scrollPosition = $(window).scrollTop();
+            
+            $('.premium-timeline-item').each(function() {
+                const elementPosition = $(this).offset().top;
+                
+                if (scrollPosition > elementPosition - windowHeight + 100) {
+                    $(this).addClass('active');
+                    
+                    // Update progress line
+                    const activeItems = $('.premium-timeline-item.active').length;
+                    const totalItems = $('.premium-timeline-item').length;
+                    const progressPercent = (activeItems / totalItems) * 100;
+                    
+                    $('#timeline-progress').css('height', progressPercent + '%');
+                }
+            });
+        });
+        
+        // Small Countdown Timer
+        function updateSmallCountdown() {
+            const targetDate = new Date('February 28, 2025 23:59:59').getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('small-days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('small-hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('small-minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('small-seconds').innerText = seconds.toString().padStart(2, '0');
+            
+            if (distance < 0) {
+                clearInterval(smallCountdownInterval);
+                document.getElementById('small-countdown').innerHTML = 'Registration Closed';
+            }
+        }
+        
+        updateSmallCountdown();
+        const smallCountdownInterval = setInterval(updateSmallCountdown, 1000);
+        
+        // Particles.js
+        particlesJS('particles', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.1,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 1,
+                        "opacity_min": 0.05,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 2,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.1,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 0.2
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html> 
