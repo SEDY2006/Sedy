@@ -13,7 +13,7 @@
     <!-- AOS Animation -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Preloader -->
@@ -320,268 +320,226 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+   <!-- Back to Top Button -->
+   <a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</a>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<!-- Custom JS -->
+<script>
+    // Initialize AOS Animation
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: false,
+        mirror: false
+    });
     
-    <!-- Custom JS -->
-    <script>
-        // Initialize AOS Animation
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: false,
-            mirror: false
-        });
+    // Preloader
+    $(window).on('load', function() {
+        setTimeout(function() {
+            $('.preloader').addClass('hide');
+        }, 1000);
+    });
+    
+    // Navbar Scroll
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 50) {
+            $('.navbar').addClass('scrolled');
+        } else {
+            $('.navbar').removeClass('scrolled');
+        }
+    });
+    
+    // Mobile Menu Toggle
+    $('.menu-toggle').click(function() {
+        $('.nav-menu').toggleClass('active');
+        $('.hamburger').toggleClass('active');
+    });
+    
+    // Custom Cursor
+    document.addEventListener('DOMContentLoaded', function() {
+        const cursor = document.querySelector('.cursor');
+        const cursorFollower = document.querySelector('.cursor-follower');
         
-        // Preloader
-        $(window).on('load', function() {
-            setTimeout(function() {
-                $('.preloader').addClass('hide');
-            }, 1000);
-        });
-        
-        // Navbar Scroll
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 50) {
-                $('.navbar').addClass('scrolled');
-            } else {
-                $('.navbar').removeClass('scrolled');
-            }
-            
-            // Back to top button
-            if ($(this).scrollTop() > 300) {
-                $('.back-to-top').addClass('active');
-            } else {
-                $('.back-to-top').removeClass('active');
-            }
-        });
-        
-        // Back to top button click
-        $('.back-to-top').click(function(e) {
-            e.preventDefault();
-            $('html, body').animate({scrollTop: 0}, 500);
-            return false;
-        });
-        
-        // Mobile Menu Toggle
-        $('.menu-toggle').click(function() {
-            $('.nav-menu').toggleClass('active');
-            $('.hamburger').toggleClass('active');
-        });
-        
-        // Custom Cursor
-        document.addEventListener('DOMContentLoaded', function() {
-            const cursor = document.querySelector('.cursor');
-            const cursorFollower = document.querySelector('.cursor-follower');
-            
-            document.addEventListener('mousemove', function(e) {
-                gsap.to(cursor, {
-                    x: e.clientX,
-                    y: e.clientY,
-                    duration: 0.1,
-                    opacity: 1
-                });
-                
-                gsap.to(cursorFollower, {
-                    x: e.clientX,
-                    y: e.clientY,
-                    duration: 0.3,
-                    opacity: 1
-                });
+        document.addEventListener('mousemove', function(e) {
+            gsap.to(cursor, {
+                x: e.clientX,
+                y: e.clientY,
+                duration: 0.1,
+                opacity: 1
             });
             
-            document.addEventListener('mousedown', function() {
+            gsap.to(cursorFollower, {
+                x: e.clientX,
+                y: e.clientY,
+                duration: 0.3,
+                opacity: 1
+            });
+        });
+        
+        document.addEventListener('mousedown', function() {
+            cursor.classList.add('active');
+            cursorFollower.classList.add('active');
+        });
+        
+        document.addEventListener('mouseup', function() {
+            cursor.classList.remove('active');
+            cursorFollower.classList.remove('active');
+        });
+        
+        // Add hover effect to links and buttons
+        const hoverElements = document.querySelectorAll('a, button, .btn');
+        hoverElements.forEach(element => {
+            element.addEventListener('mouseenter', function() {
                 cursor.classList.add('active');
                 cursorFollower.classList.add('active');
             });
             
-            document.addEventListener('mouseup', function() {
+            element.addEventListener('mouseleave', function() {
                 cursor.classList.remove('active');
                 cursorFollower.classList.remove('active');
             });
-            
-            // Add hover effect to links and buttons
-            const hoverElements = document.querySelectorAll('a, button, .btn');
-            hoverElements.forEach(element => {
-                element.addEventListener('mouseenter', function() {
-                    cursor.classList.add('active');
-                    cursorFollower.classList.add('active');
-                });
-                
-                element.addEventListener('mouseleave', function() {
-                    cursor.classList.remove('active');
-                    cursorFollower.classList.remove('active');
-                });
-            });
         });
+    });
+    
+    // Countdown Timer
+    function updateCountdown() {
+        const targetDate = new Date('February 28, 2025 23:59:59').getTime();
+        const now = new Date().getTime();
+        const distance = targetDate - now;
         
-        // FAQ Toggle
-        $('.faq-question').click(function() {
-            $(this).parent().toggleClass('active');
-            $(this).parent().find('.faq-answer').slideToggle(300);
-            $(this).find('.faq-toggle i').toggleClass('fa-plus fa-minus');
-        });
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
         
-        // Timeline Animation
-        $(window).scroll(function() {
-            const windowHeight = $(window).height();
-            const scrollPosition = $(window).scrollTop();
-            
-            $('.premium-timeline-item').each(function() {
-                const elementPosition = $(this).offset().top;
-                
-                if (scrollPosition > elementPosition - windowHeight + 100) {
-                    $(this).addClass('active');
-                    
-                    // Update progress line
-                    const activeItems = $('.premium-timeline-item.active').length;
-                    const totalItems = $('.premium-timeline-item').length;
-                    const progressPercent = (activeItems / totalItems) * 100;
-                    
-                    $('#timeline-progress').css('height', progressPercent + '%');
-                }
-            });
-        });
+        document.getElementById('days').innerText = days.toString().padStart(2, '0');
+        document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+        document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
         
-        // Small Countdown Timer
-        function updateSmallCountdown() {
-            const targetDate = new Date('February 28, 2025 23:59:59').getTime();
-            const now = new Date().getTime();
-            const distance = targetDate - now;
-            
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            document.getElementById('small-days').innerText = days.toString().padStart(2, '0');
-            document.getElementById('small-hours').innerText = hours.toString().padStart(2, '0');
-            document.getElementById('small-minutes').innerText = minutes.toString().padStart(2, '0');
-            document.getElementById('small-seconds').innerText = seconds.toString().padStart(2, '0');
-            
-            if (distance < 0) {
-                clearInterval(smallCountdownInterval);
-                document.getElementById('small-countdown').innerHTML = 'Registration Closed';
-            }
+        if (distance < 0) {
+            clearInterval(countdownInterval);
+            document.getElementById('countdown').innerHTML = '<h3>Registration Closed</h3>';
         }
-        
-        updateSmallCountdown();
-        const smallCountdownInterval = setInterval(updateSmallCountdown, 1000);
-        
-        // Particles.js
-        particlesJS('particles', {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#ffffff"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    }
-                },
-                "opacity": {
-                    "value": 0.1,
-                    "random": true,
-                    "anim": {
-                        "enable": true,
-                        "speed": 1,
-                        "opacity_min": 0.05,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": true,
-                        "speed": 2,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
+    }
+    
+    updateCountdown();
+    const countdownInterval = setInterval(updateCountdown, 1000);
+    
+    // Particles.js
+    particlesJS('particles', {
+        "particles": {
+            "number": {
+                "value": 80,
+                "density": {
                     "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.1,
-                    "width": 1
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#ffffff"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
                 },
-                "move": {
+                "polygon": {
+                    "nb_sides": 5
+                }
+            },
+            "opacity": {
+                "value": 0.1,
+                "random": true,
+                "anim": {
                     "enable": true,
                     "speed": 1,
-                    "direction": "none",
-                    "random": true,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
+                    "opacity_min": 0.05,
+                    "sync": false
                 }
             },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
+            "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                    "enable": true,
+                    "speed": 2,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.1,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 1,
+                "direction": "none",
+                "random": true,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "grab"
                 },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 0.2
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
             },
-            "retina_detect": true
-        });
-    </script>
+            "modes": {
+                "grab": {
+                    "distance": 140,
+                    "line_linked": {
+                        "opacity": 0.2
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    });
+</script>
 </body>
 </html> 
