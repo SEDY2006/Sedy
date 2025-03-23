@@ -1,0 +1,130 @@
+/* Bubble container styles - works for both hero-section and page-header */
+.hero-section .bubble-container,
+.page-header .bubble-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: auto;
+}
+
+/* Dark background for page-header only */
+.page-header .bubble-container {
+    background: linear-gradient(135deg, rgba(10, 10, 30, 0.85), rgba(5, 5, 25, 0.95));
+}
+
+/* Original bubble styles */
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.6), rgba(200, 220, 255, 0.15) 60%);
+    box-shadow: 
+        inset 0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 15px rgba(150, 200, 255, 0.3);
+    backdrop-filter: blur(1px);
+    animation: float 25s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+    transform-origin: center;
+    will-change: transform, opacity;
+    pointer-events: auto;
+    transition: all 0.3s ease;
+}
+
+/* Color variations for bubbles */
+.bubble:nth-child(3n) {
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.7), rgba(200, 255, 220, 0.2) 60%);
+    box-shadow: 
+        inset 0 0 20px rgba(255, 255, 255, 0.7),
+        0 0 15px rgba(150, 255, 200, 0.35);
+}
+
+.bubble:nth-child(3n+1) {
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.7), rgba(255, 220, 235, 0.2) 60%);
+    box-shadow: 
+        inset 0 0 20px rgba(255, 255, 255, 0.7),
+        0 0 15px rgba(255, 150, 200, 0.35);
+}
+
+.bubble:hover {
+    box-shadow: 
+        inset 0 0 30px rgba(255, 255, 255, 0.8),
+        0 0 30px rgba(150, 200, 255, 0.8);
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(200, 220, 255, 0.3) 60%);
+    z-index: 1;
+    transform: scale(1.05);
+    filter: brightness(1.5);
+}
+
+.bubble::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    width: 20%;
+    height: 20%;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    filter: blur(2px);
+    transition: all 0.3s ease;
+}
+
+.bubble:hover::after {
+    background: rgba(255, 255, 255, 0.9);
+    filter: blur(3px);
+    width: 25%;
+    height: 25%;
+}
+
+.bubble.hover-glow {
+    box-shadow: 
+        inset 0 0 40px rgba(255, 255, 255, 0.9),
+        0 0 40px rgba(150, 200, 255, 0.9);
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(200, 220, 255, 0.4) 60%);
+    z-index: 1;
+    transform: scale(1.1);
+    filter: brightness(1.7) drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
+}
+
+/* Color variations for glowing bubbles */
+.bubble:nth-child(3n).hover-glow {
+    box-shadow: 
+        inset 0 0 40px rgba(255, 255, 255, 0.9),
+        0 0 40px rgba(150, 255, 200, 0.9);
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(200, 255, 220, 0.4) 60%);
+}
+
+.bubble:nth-child(3n+1).hover-glow {
+    box-shadow: 
+        inset 0 0 40px rgba(255, 255, 255, 0.9),
+        0 0 40px rgba(255, 150, 200, 0.9);
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(255, 220, 235, 0.4) 60%);
+}
+
+.bubble.hover-glow::after {
+    background: rgba(255, 255, 255, 1);
+    filter: blur(4px);
+    width: 30%;
+    height: 30%;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(0.8);
+        opacity: 0;
+    }
+    8% {
+        opacity: var(--opacity);
+    }
+    50% {
+        transform: translate(calc(var(--drift) * 1.5vw), -15vh) scale(1);
+    }
+    92% {
+        opacity: var(--opacity);
+    }
+    100% {
+        transform: translate(calc(var(--drift) * 3vw), -30vh) scale(0.8);
+        opacity: 0;
+    }
+} 

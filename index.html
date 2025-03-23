@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="bubbles.css">
 </head>
 <body>
     <!-- Preloader -->
@@ -62,6 +63,9 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-bg"></div>
+        
+        <!-- Bubble Container -->
+        <div class="bubble-container"></div>
         
         <!-- Floating Shapes -->
         <div class="floating-shape shape-1"></div>
@@ -529,6 +533,12 @@
             },
             "retina_detect": true
         });
+    </script>
+
+    <!-- Add this script at the end of your body -->
+    <script src="bubbles.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', createBubbles);
     </script>
 </body>
 </html> 
