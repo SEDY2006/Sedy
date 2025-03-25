@@ -7,7 +7,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- AOS Animation -->
@@ -39,7 +39,7 @@
         <div class="container">
             <div class="logo">
                 <a href="index.html">
-                    <span class="logo-text">Research <span class="logo-highlight">Poster</span> Competition</span>
+                    <span class="logo-text">Research Poster Competition <span class="logo-highlight">2025</span></span>
                 </a>
             </div>
             <div class="menu-toggle">
@@ -84,7 +84,7 @@
                     <p><b>We believe that effective visual communication of research is just as important as the research itself. Our competition encourages researchers to present complex findings in accessible, engaging formats that can reach both expert and non-expert audiences.</b></p>
                 </div>
                 <br>
-                <center>
+                <!-- <center>
                 <div class="col-md-6" data-aos="fade-left">
                     <div class="about-image" >
                         <img src="pstr.jpg" alt="Participants at the Research Poster Competition" class="img-fluid hover-card">
@@ -96,7 +96,7 @@
                             </div>
                         </div>
                     </div>
-                </center>
+                </center> -->
                 </div>
             </div>
         </div>
@@ -493,9 +493,9 @@
     <section class="cta-section">
         <div class="container">
             <h2 data-aos="fade-up">Ready to Showcase Your Research ?</h2>
-            <p data-aos="fade-up" data-aos-delay="100" style="color: black;"><b>Register now to secure your spot in the Research Poster Competition 2025. Limited spots available with early bird discounts.</b></p>
+            <p data-aos="fade-up" data-aos-delay="100" style="color: black;"><b>Please register promptly to ensure your participation in the 2025 Research Poster Competition.</b></p>
             <div data-aos="fade-up" data-aos-delay="200">
-                <a href="register.html" class="btn btn-primary btn-shimmer">Register Today</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9I6JBgY1lWa5kxbMibw4SEcfYWY2gjC1S_Xm3Xzi4BnKnBA/viewform" class="btn btn-primary btn-shimmer">Register Today</a>
             </div>
         </div>
     </section>
@@ -520,7 +520,7 @@
                         <li><a href="dates.html">Key Dates</a></li>
                         <li><a href="guidelines.html">Guidelines</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="register.html">Register</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc9I6JBgY1lWa5kxbMibw4SEcfYWY2gjC1S_Xm3Xzi4BnKnBA/viewform">Register</a></li>
                     </ul>
                 </div>
                 
@@ -606,45 +606,57 @@
             const cursor = document.querySelector('.cursor');
             const cursorFollower = document.querySelector('.cursor-follower');
             
-            document.addEventListener('mousemove', function(e) {
-                gsap.to(cursor, {
-                    x: e.clientX,
-                    y: e.clientY,
-                    duration: 0.1,
-                    opacity: 1
+            // Check if device is mobile
+            function isMobile() {
+                return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+            }
+            
+            // Only initialize custom cursor if not on mobile
+            if (!isMobile()) {
+                document.addEventListener('mousemove', function(e) {
+                    gsap.to(cursor, {
+                        x: e.clientX,
+                        y: e.clientY,
+                        duration: 0.1,
+                        opacity: 1
+                    });
+                    
+                    gsap.to(cursorFollower, {
+                        x: e.clientX,
+                        y: e.clientY,
+                        duration: 0.3,
+                        opacity: 1
+                    });
                 });
                 
-                gsap.to(cursorFollower, {
-                    x: e.clientX,
-                    y: e.clientY,
-                    duration: 0.3,
-                    opacity: 1
-                });
-            });
-            
-            document.addEventListener('mousedown', function() {
-                cursor.classList.add('active');
-                cursorFollower.classList.add('active');
-            });
-            
-            document.addEventListener('mouseup', function() {
-                cursor.classList.remove('active');
-                cursorFollower.classList.remove('active');
-            });
-            
-            // Add hover effect to links and buttons
-            const hoverElements = document.querySelectorAll('a, button, .btn');
-            hoverElements.forEach(element => {
-                element.addEventListener('mouseenter', function() {
+                document.addEventListener('mousedown', function() {
                     cursor.classList.add('active');
                     cursorFollower.classList.add('active');
                 });
                 
-                element.addEventListener('mouseleave', function() {
+                document.addEventListener('mouseup', function() {
                     cursor.classList.remove('active');
                     cursorFollower.classList.remove('active');
                 });
-            });
+                
+                // Add hover effect to links and buttons
+                const hoverElements = document.querySelectorAll('a, button, .btn');
+                hoverElements.forEach(element => {
+                    element.addEventListener('mouseenter', function() {
+                        cursor.classList.add('active');
+                        cursorFollower.classList.add('active');
+                    });
+                    
+                    element.addEventListener('mouseleave', function() {
+                        cursor.classList.remove('active');
+                        cursorFollower.classList.remove('active');
+                    });
+                });
+            } else {
+                // Hide cursor elements on mobile
+                cursor.style.display = 'none';
+                cursorFollower.style.display = 'none';
+            }
         });
         
         // FAQ Toggle

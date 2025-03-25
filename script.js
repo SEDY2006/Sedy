@@ -402,3 +402,7 @@ document.addEventListener('keydown', (e) => {
         document.body.classList.remove('no-scroll');
     }
 }); 
+// Initialize bubbles for logo section too
+document.addEventListener('DOMContentLoaded', function() {
+    createBubbles();
+});
