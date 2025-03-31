@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Research Poster Competition 2025</title>
+    <!-- Fonts -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="bubbles.css">
+    <style>
+        /* Fixed navbar positioning */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            z-index: 1000;
+            background-color: black;
+        }
+
+        /* Page header with proper spacing */
+        .page-header {
+            margin-top: 80px;
+            position: relative;
+            padding: 60px 0;
+            text-align: center;
+            background-color: #111;
+            overflow: hidden;
+        }
+
+        /* Gallery specific styles */
+        .gallery-section {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: #ff6b00;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            height: 300px;
+            background-color: #fff;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            color: #fff;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-title {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .gallery-desc {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .gallery-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-icon:hover {
+            background: #ff6b00;
+            color: #fff;
+        }
+
+        /* Modal styles */
+        .gallery-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            z-index: 2000;
+            overflow: auto;
+            padding: 50px 0;
+        }
+
+        .modal-content {
+            position: relative;
+            width: 80%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .modal-img {
+            width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+
+        .modal-caption {
+            color: #fff;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: #ff6b00;
+        }
+
+        .modal-prev, .modal-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            background: rgba(0,0,0,0.5);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-prev {
+            left: -70px;
+        }
+
+        .modal-next {
+            right: -70px;
+        }
+
+        .modal-prev:hover, .modal-next:hover {
+            color: #ff6b00;
+            background: rgba(0,0,0,0.8);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .modal-content {
+                width: 95%;
+            }
+            
+            .modal-prev, .modal-next {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .modal-prev {
+                left: -20px;
+            }
+            
+            .modal-next {
+                right: -20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader - Exactly as in index.html -->
+    <div class="preloader">
+        <div class="loader">
+            <svg viewBox="0 0 50 50">
+                <circle cx="25" cy="25" r="20"></circle>
+            </svg>
+        </div>
+        <div class="loader-text">Loading <span class="dots"></span></div>
+    </div>
+
+    <!-- Custom Cursor - Exactly as in index.html -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Particles Effect - Exactly as in index.html -->
+    <div class="particle-container" id="particles"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <div class="pic-logo">
+                    <img src="renew.jpg" alt="Logo">
+                </div>
+                <a href="index.html">
+                    <span class="logo-text" style="font-size: 20px; font-weight: bolder; color: antiquewhite;">Research Poster Competition <span class="logo-highlight" style="color: gold;">2025</span></span>
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="dates.html" class="nav-link ">Key Dates</a></li>
+                <li class="nav-item"><a href="guidelines.html" class="nav-link ">Guidelines</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <!-- <li class="nav-item"><a href="register.html" class="highlight btn-shimmer">Register Now</a></li> -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header with Bubble Animation -->
+    <section class="page-header">
+        <!-- Bubble Container -->
+        <div class="bubble-container"></div>
+        
+        <div class="container">
+            <center>
+            <h1 data-aos="fade-up">Event Gallery</h1>
+            <p data-aos="fade-up" data-aos-delay="100" style="color: gold; font-weight: bolder;"><b>Browse through photographs from our past research poster competitions</b></p>
+        </center>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="gallery-container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle"><b>Memories & Highlights</b></span>
+                <h2 class="section-title">Competition Moments</h2>
+                <p class="section-description"><b>Explore visual highlights from our previous research poster competitions.</b></p>
+            </div>
+
+            <!-- <div class="gallery-filters" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="presentations">Presentations</button>
+                <button class="filter-btn" data-filter="awards">Award Ceremony</button>
+                <button class="filter-btn" data-filter="workshops">Workshops</button>
+                <button class="filter-btn" data-filter="networking">Networking</button>
+            </div> -->
+
+            <div class="gallery-grid" data-aos="fade-up">
+                <!-- Replace these with your actual images and descriptions -->
+                <div class="gallery-item" data-category="presentations">
+                    <img src="https://via.placeholder.com/600x400?text=Presentation+1" alt="Research Presentation" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">AI Research Presentation</h3>
+                        <p class="gallery-desc">Dr. Sharma explaining her breakthrough research in AI ethics.</p>
+                    </div>
+                    <!-- <div class="gallery-icon">
+                        <i class="fas fa-expand"></i>
+                    </div> -->
+                </div>
+
+                <div class="gallery-item" data-category="awards">
+                    <img src="https://via.placeholder.com/600x400?text=Award+Ceremony" alt="Award Ceremony" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Best Innovation Award</h3>
+                        <p class="gallery-desc">Presenting the award for the most innovative research project of 2024.</p>
+                    </div>
+                    <!-- <div class="gallery-icon">
+                        <i class="fas fa-expand"></i>
+                    </div> -->
+                </div>
+
+                <div class="gallery-item" data-category="workshops">
+                    <img src="https://via.placeholder.com/600x400?text=Workshop" alt="Workshop Session" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Poster Design Workshop</h3>
+                        <p class="gallery-desc">Students learning effective research poster design techniques.</p>
+                    </div>
+                    <!-- <div class="gallery-icon">
+                        <i class="fas fa-expand"></i>
+                    </div> -->
+                </div>
+
+                <div class="gallery-item" data-category="networking">
+                    <img src="https://via.placeholder.com/600x400?text=Networking" alt="Networking Event" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Research Networking</h3>
+                        <p class="gallery-desc">Participants connecting with industry professionals during the event.</p>
+                    </div>
+                    <!-- <div class="gallery-icon">
+                        <i class="fas fa-expand"></i>
+                    </div> -->
+                </div>
+
+                <div class="gallery-item" data-category="presentations">
+                    <img src="https://via.placeholder.com/600x400?text=Presentation+2" alt="Research Presentation" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Biomedical Research</h3>
+                        <p class="gallery-desc">Innovative research on regenerative medicine presented by Dr. Kapoor.</p>
+                    </div>
+                    <!-- <div class="gallery-icon">
+                        <i class="fas fa-expand"></i>
+                    </div> -->
+                </div>
+
+                <div class="gallery-item" data-category="awards">
+                    <img src="https://via.placeholder.com/600x400?text=Winners" alt="Competition Winners" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">2024 Winners</h3>
+                        <p class="gallery-desc">Group photo of all award recipients from the 2024 competition.</p>
+                    </div>
+                    <!-- <div class="gallery-icon">
+                        <i class="fas fa-expand"></i>
+                    </div> -->
+                </div>
+
+                <div class="gallery-item" data-category="networking">
+                    <img src="https://via.placeholder.com/600x400?text=Discussion" alt="Research Discussion" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Expert Discussions</h3>
+                        <p class="gallery-desc">In-depth discussions between researchers and industry experts.</p>
+                    </div>
+                    <!-- <div class="gallery-icon">
+                        <i class="fas fa-expand"></i>
+                    </div> -->
+                </div>
+
+                <div class="gallery-item" data-category="workshops">
+                    <img src="https://via.placeholder.com/600x400?text=Interactive+Session" alt="Interactive Session" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Research Methodology Workshop</h3>
+                        <p class="gallery-desc">Interactive session on advanced research methodologies.</p>
+                    </div>
+                    <!-- <div class="gallery-icon">
+                        <i class="fas fa-expand"></i>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div class="gallery-modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-prev"><i class="fas fa-chevron-left"></i></div>
+            <div class="modal-next"><i class="fas fa-chevron-right"></i></div>
+            <img class="modal-img" src="" alt="Expanded Gallery Image">
+            <div class="modal-caption"></div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Want to be part of our next gallery?</h2>
+            <p data-aos="fade-up" data-aos-delay="100" style="color: rgb(255, 205, 4);"><b>Register for the 2025 Research Poster Competition and showcase your work!</b></p>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9I6JBgY1lWa5kxbMibw4SEcfYWY2gjC1S_Xm3Xzi4BnKnBA/viewform" class="btn btn-primary btn-shimmer">Register Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Research Poster Competition</h3>
+                    <p>An annual event bringing together innovative minds to showcase their research through visually compelling posters.</p>
+                    <p>Techno International New Town (TINT)<br>
+                    DG Block, Action Area I, Newtown,<br>
+                    Kolkata - 700156</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>  
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="dates.html">Key Dates</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="guidelines.html">Guidelines</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc9I6JBgY1lWa5kxbMibw4SEcfYWY2gjC1S_Xm3Xzi4BnKnBA/viewform">Register</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> info@postercompetition.org</p>
+                    <p><i class="fas fa-phone"></i> +91 33 2324 3123</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Research Poster Competition. All Rights Reserved. Designed by TINT Design Team.</p>
+            </div>
+        </div>
+    </footer>
+
+   <!-- Back to Top Button -->
+   <a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<!-- Custom JS -->
+<script>
+    // Initialize AOS Animation
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: false,
+        mirror: false
+    });
+    
+    // Preloader
+    $(window).on('load', function() {
+        setTimeout(function() {
+            $('.preloader').addClass('hide');
+        }, 1000);
+    });
+    
+    // Navbar Scroll
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 50) {
+            $('.navbar').addClass('scrolled');
+        } else {
+            $('.navbar').removeClass('scrolled');
+        }
+        
+        // Back to top button
+        if ($(this).scrollTop() > 300) {
+            $('.back-to-top').addClass('active');
+        } else {
+            $('.back-to-top').removeClass('active');
+        }
+    });
+    
+    // Back to top button click
+    $('.back-to-top').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({scrollTop: 0}, 500);
+        return false;
+    });
+    
+    // Mobile Menu Toggle
+    $('.menu-toggle').click(function() {
+        $('.nav-menu').toggleClass('active');
+        $('.hamburger').toggleClass('active');
+    });
+    
+    // Custom Cursor
+    document.addEventListener('DOMContentLoaded', function() {
+        const cursor = document.querySelector('.cursor');
+        const cursorFollower = document.querySelector('.cursor-follower');
+        
+        // Check if device is mobile
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+        }
+        
+        // Only initialize custom cursor if not on mobile
+        if (!isMobile()) {
+            document.addEventListener('mousemove', function(e) {
+                gsap.to(cursor, {
+                    x: e.clientX,
+                    y: e.clientY,
+                    duration: 0.1,
+                    opacity: 1
+                });
+                
+                gsap.to(cursorFollower, {
+                    x: e.clientX,
+                    y: e.clientY,
+                    duration: 0.3,
+                    opacity: 1
+                });
+            });
+            
+            document.addEventListener('mousedown', function() {
+                cursor.classList.add('active');
+                cursorFollower.classList.add('active');
+            });
+            
+            document.addEventListener('mouseup', function() {
+                cursor.classList.remove('active');
+                cursorFollower.classList.remove('active');
+            });
+            
+            // Add hover effect to links and buttons
+            const hoverElements = document.querySelectorAll('a, button, .btn');
+            hoverElements.forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    cursor.classList.add('active');
+                    cursorFollower.classList.add('active');
+                });
+                
+                element.addEventListener('mouseleave', function() {
+                    cursor.classList.remove('active');
+                    cursorFollower.classList.remove('active');
+                });
+            });
+        } else {
+            // Hide cursor elements on mobile
+            cursor.style.display = 'none';
+            cursorFollower.style.display = 'none';
+        }
+    });
+    
+    // FAQ Toggle
+    $('.faq-question').click(function() {
+        $(this).parent().toggleClass('active');
+        $(this).parent().find('.faq-answer').slideToggle(300);
+        $(this).find('.faq-toggle i').toggleClass('fa-plus fa-minus');
+    });
+    
+    // Timeline Animation
+    $(window).scroll(function() {
+        const windowHeight = $(window).height();
+        const scrollPosition = $(window).scrollTop();
+        
+        $('.premium-timeline-item').each(function() {
+            const elementPosition = $(this).offset().top;
+            
+            if (scrollPosition > elementPosition - windowHeight + 100) {
+                $(this).addClass('active');
+                
+                // Update progress line
+                const activeItems = $('.premium-timeline-item.active').length;
+                const totalItems = $('.premium-timeline-item').length;
+                const progressPercent = (activeItems / totalItems) * 100;
+                
+                $('#timeline-progress').css('height', progressPercent + '%');
+            }
+        });
+    });
+    
+    // Small Countdown Timer
+    function updateSmallCountdown() {
+        const targetDate = new Date('February 28, 2025 23:59:59').getTime();
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+        
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        document.getElementById('small-days').innerText = days.toString().padStart(2, '0');
+        document.getElementById('small-hours').innerText = hours.toString().padStart(2, '0');
+        document.getElementById('small-minutes').innerText = minutes.toString().padStart(2, '0');
+        document.getElementById('small-seconds').innerText = seconds.toString().padStart(2, '0');
+        
+        if (distance < 0) {
+            clearInterval(smallCountdownInterval);
+            document.getElementById('small-countdown').innerHTML = 'Registration Closed';
+        }
+    }
+    
+    updateSmallCountdown();
+    const smallCountdownInterval = setInterval(updateSmallCountdown, 1000);
+    
+    // Particles.js
+    particlesJS('particles', {
+        "particles": {
+            "number": {
+                "value": 80,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#ffffff"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                }
+            },
+            "opacity": {
+                "value": 0.1,
+                "random": true,
+                "anim": {
+                    "enable": true,
+                    "speed": 1,
+                    "opacity_min": 0.05,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                    "enable": true,
+                    "speed": 2,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.1,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 1,
+                "direction": "none",
+                "random": true,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "grab"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 140,
+                    "line_linked": {
+                        "opacity": 0.2
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    });
+
+    // Gallery Modal Functionality - Fixed version
+    document.addEventListener('DOMContentLoaded', function() {
+        // Gallery Modal
+        let currentIndex = 0;
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const modal = document.querySelector('.gallery-modal');
+        const modalImg = document.querySelector('.modal-img');
+        const modalCaption = document.querySelector('.modal-caption');
+        const closeBtn = document.querySelector('.modal-close');
+        const prevBtn = document.querySelector('.modal-prev');
+        const nextBtn = document.querySelector('.modal-next');
+        
+        // Open modal when clicking on expand icon
+        document.querySelectorAll('.gallery-icon').forEach((item, index) => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const parent = this.parentElement;
+                const imgSrc = parent.querySelector('.gallery-img').src;
+                const title = parent.querySelector('.gallery-title').textContent;
+                const desc = parent.querySelector('.gallery-desc').textContent;
+                
+                modalImg.src = imgSrc;
+                modalCaption.textContent = `${title} - ${desc}`;
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                currentIndex = index;
+                
+                console.log('Modal opened for image: ' + imgSrc); // Debug
+            });
+        });
+        
+        // Open modal when clicking on the gallery item itself
+        document.querySelectorAll('.gallery-item').forEach((item, index) => {
+            item.addEventListener('click', function(e) {
+                if (!e.target.classList.contains('gallery-icon') && !e.target.closest('.gallery-icon')) {
+                    const imgSrc = this.querySelector('.gallery-img').src;
+                    const title = this.querySelector('.gallery-title').textContent;
+                    const desc = this.querySelector('.gallery-desc').textContent;
+                    
+                    modalImg.src = imgSrc;
+                    modalCaption.textContent = `${title} - ${desc}`;
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                    currentIndex = index;
+                }
+            });
+        });
+        
+        // Close modal
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close modal on outside click
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Navigate through gallery
+        prevBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            updateModal();
+        });
+        
+        nextBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            updateModal();
+        });
+        
+        // Update modal content
+        function updateModal() {
+            const currentItem = galleryItems[currentIndex];
+            const imgSrc = currentItem.querySelector('.gallery-img').src;
+            const title = currentItem.querySelector('.gallery-title').textContent;
+            const desc = currentItem.querySelector('.gallery-desc').textContent;
+            
+            modalImg.src = imgSrc;
+            modalCaption.textContent = `${title} - ${desc}`;
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (modal.style.display === 'block') {
+                if (e.key === 'ArrowLeft') {
+                    currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+                    updateModal();
+                }
+                else if (e.key === 'ArrowRight') {
+                    currentIndex = (currentIndex + 1) % galleryItems.length;
+                    updateModal();
+                }
+                else if (e.key === 'Escape') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        });
+    });
+</script>
+
+<!-- Bubble effect -->
+<script src="bubbles.js"></script>
+</body>
+</html> 
